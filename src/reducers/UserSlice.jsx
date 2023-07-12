@@ -33,11 +33,38 @@ const initialState = {
   data: null,
   error: null,
   status: null,
+  demo: [
+    {
+      cellno: 1,
+      status: true,
+    },
+    {
+      cellno: 2,
+      status: false,
+    },
+    {
+      cellno: 3,
+      status: false,
+    },
+    {
+      cellno: 4,
+      status: true,
+    },
+    {
+      cellno: 5,
+      status: false,
+    },
+  ],
 };
 const UserSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    handleAvaiblity(state, action) {
+      console.log(action.payload);
+      state.demo[action.payload].status = true;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getUsersData.pending, (state) => {
       state.status = "loading";
@@ -67,4 +94,4 @@ const UserSlice = createSlice({
 
 export default UserSlice.reducer;
 
-// export const { getUsersData } = UserSlice.actions;
+export const { handleAvaiblity } = UserSlice.actions;

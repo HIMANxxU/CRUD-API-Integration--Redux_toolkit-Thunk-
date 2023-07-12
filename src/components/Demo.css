@@ -1,0 +1,16 @@
+.box {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+}
+.box-p {
+  display: flex;
+  width: 40vw;
+  justify-content: space-between;
+}
+.green {
+  background-color: rgba(0, 128, 0, 0.438);
+}
+.red {
+  background-color: rgba(128, 21, 0, 0.438);
+}
